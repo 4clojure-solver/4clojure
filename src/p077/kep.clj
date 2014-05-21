@@ -4,6 +4,7 @@
 (defn foo [lst]
   (->> lst
        (group-by set)
-       (filter (fn [[_ v]] (<= 2 (count v))))
-       (map #(->> % second set))
+       (map second)
+       (filter #(<= 2 (count %)))
+       (map set)
        (set)))
