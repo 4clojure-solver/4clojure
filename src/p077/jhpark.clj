@@ -30,12 +30,9 @@
 (doseq [val (distinct (vals (to-map)))]
 
   )
-(map #(some #{%} (map val c))(distinct (vals c)))
 
-
-(keep #(some (set %) (map val c) )  (distinct (vals c)))
-
-(keep #(if (#(some #{%} (map val c)))  ) (distinct (vals c)))
-
-
-
+(->> {:a "bar" :b "foo" :c "bar" :d "baz"} ; initial map
+     (group-by val)   ; sorted into a new map based on value of each key
+     (#(get % "bar")) ; extract the entries that had value "bar"
+     (map key))     ; get the keys that had value bar
+(:a :c)
