@@ -20,12 +20,14 @@
 
 
 (defn perm [x]
-  (if (= (count x) 1)
+  (if (zero? (count x))
     (list x)
     (mapcat (fn [a]
               (map (fn [b]
-                    (map (fn [c]
-                           (flatten (conj [a] c)))
-                         b))
-                  (perm (remove #{a} x))))
+                     (vec (concat [a] b)))
+                   (perm (remove #{a} x))))
             x)))
+
+
+(= (combo/permutations [1 2 3 4]) (perm [1 2 3 4]))
+;=> true
