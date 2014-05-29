@@ -3,7 +3,7 @@
 
 (defn foo [lst]
   (->> lst
-       (group-by set)
+       (group-by frequencies)
        (map second)
        (filter #(<= 2 (count %)))
        (map set)
