@@ -31,3 +31,25 @@
 
 (= (combo/permutations [1 2 3 4]) (perm [1 2 3 4]))
 ;=> true
+
+
+(defn npr
+  ([x]
+     (npr x (count x)))
+  ([x cnt]
+     (if (zero? cnt)
+       (list x)
+       (mapcat (fn [a]
+                 (map (fn [b]
+                        (vec (take cnt (concat [a] b))))
+                      (npr (remove #{a} x) (dec cnt))))
+               x))))
+
+(npr [1 2 3] 1)
+;=> ([1] [2] [3])
+
+(npr [1 2 3] 2)
+;=> ([1 2] [1 3] [2 1] [2 3] [3 1] [3 2])
+
+(npr [1 2 3] 3)
+;=> ([1 2 3] [1 3 2] [2 1 3] [2 3 1] [3 1 2] [3 2 1])
