@@ -18,21 +18,9 @@
 
 
 
-(let [source2 (to-map)
-      aa      (doseq [val (distinct (vals (to-map)))]
-
-                )] )
-
-
-(def c  {:eat "aet", :mate "aemt", :team "aemt", :mat "amt", :meat "aemt"} )
+(let [source2 (to-map) ;{:eat "aet", :mate "aemt", :team "aemt", :mat "amt", :meat "aemt"}
+      aa      (for [val (distinct (vals (to-map)))]
+                (filter (comp #{val} source2) (keys source2)))]
+  aa)
 
 
-(doseq [val (distinct (vals (to-map)))]
-
-  )
-
-(->> {:a "bar" :b "foo" :c "bar" :d "baz"} ; initial map
-     (group-by val)   ; sorted into a new map based on value of each key
-     (#(get % "bar")) ; extract the entries that had value "bar"
-     (map key))     ; get the keys that had value bar
-(:a :c)
