@@ -1,23 +1,18 @@
 (ns p026.jhpark)
 
 
-
-
-(def a 3)
-
-(peek (pop [0 1]))
-
 (defn fibonacci
-  [data cnt acc]
+  ([data]
+   (fibonacci data 0 []))
+
+  ([data cnt acc]
   (if (= data cnt)
     acc
-    (let [b-last (if (nil? (peek (vec (butlast acc)))) 0)
-          last   (if (nil? (peek acc) ) 1 (peek acc))]
-      (println "b-last-> " b-last " last-> " last " acc-> " acc)
-    (fibonacci data (inc cnt) (conj acc last ) )  ))
-  )
+    (let [b-last  (peek (vec (butlast acc)))
+          b-last  (if (nil? b-last) 0 b-last)
+          last    (peek acc)
+          last    (if (nil? last) 1 last)]
+    (fibonacci data (inc cnt) (conj acc (+ last b-last )) )  ))))
 
 
-(fibonacci 3 0 [])
-
-(vec (butlast [1]))
+(fibonacci 80)
