@@ -30,3 +30,4 @@ solver.iml
 .idea/libraries/Leiningen__org_clojure_data_codec_0_1_0.xml
 .idea/libraries/Leiningen__pandect_0_3_3.xml
 .idea/uiDesigner.xml
+*.*~
