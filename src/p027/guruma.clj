@@ -1,4 +1,4 @@
-(ns p025.guruma)
+(ns p027.guruma)
 
 (defn __ [v]
   (= (seq v) (reverse v)))
