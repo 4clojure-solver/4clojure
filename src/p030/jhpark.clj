@@ -1,11 +1,12 @@
 (ns p030.jhpark)
 
+
 (def ori "Leeeeeerrroyyy")
 (def b [1 1 2 3 3 2 2 3])
 (def c [[1 2] [1 2] [3 4] [1 2]]) '([1 2] [3 4] [1 2])
 
 
-(loop [data c acc []]
+(loop [data ori acc []]
   (if (empty? data)
     acc
     (do
