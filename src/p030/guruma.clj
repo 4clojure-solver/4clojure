@@ -10,3 +10,5 @@
 
 (= (__ [[1 2] [1 2] [3 4] [1 2]]) '([1 2] [3 4] [1 2]))
 
+(defn compress [c]
+  (map first (partition-by identity c)))
