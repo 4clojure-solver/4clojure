@@ -11,14 +11,12 @@
   (last (sort xs)))
 
 
-(defn __ [& fr]
-  (loop [f (first fr) r (rest fr)]
-    (if-not (seq r)
-      f
-      (let [[f' & r'] r]
-        (if (<= f' f)
-          (recur f (rest r))
-          (recur f' (rest r)))))))
+(defn __ [& [x & xs]]
+  (loop [max x xs xs]
+    (if-not (seq xs)
+      max
+      (let [f (first xs)]
+        (recur (if (<= f max) max f) (rest xs))))))
 
 
 (defn __ [& [first & rest]]
