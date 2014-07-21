@@ -1,3 +1,4 @@
+(ns p038.jdj)
 ;; 4Clojure Question 38
 ;;
 ;; Write a function which takes a variable number of parameters and returns the maximum value.
