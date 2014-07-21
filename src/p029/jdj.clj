@@ -1,3 +1,4 @@
+(ns p029.jdj)
 ;; 4Clojure Question 29
 ;;
 ;; Write a function which takes a string and returns a new string containing only the capital letters.

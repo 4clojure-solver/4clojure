@@ -1,3 +1,4 @@
+(ns p030.jdj)
 ;; 4Clojure Question 30
 ;;
 ;; Write a function which removes consecutive duplicates from a sequence.

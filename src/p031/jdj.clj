@@ -1,3 +1,4 @@
+(ns p031.jdj)
 ;; 4Clojure Question 31
 ;;
 ;; Write a function which packs consecutive duplicates into sub-lists.

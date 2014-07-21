@@ -1,3 +1,4 @@
+(ns p039.jdj)
 ;; 4Clojure Question 39
 ;;
 ;; Write a function which takes two sequences and returns the first item from each, then the second item from each, then the third, etc.
@@ -17,6 +18,9 @@
       acc
       (recur (conj acc (first l1) (first l2)) (rest l1) (rest l2)))))
 
+
+(defmacro __ [l1 l2]
+  `(quote ~(mapcat vector l1 l2)))
 
 
 (= (__ [1 2 3] [:a :b :c]) '(1 :a 2 :b 3 :c))
