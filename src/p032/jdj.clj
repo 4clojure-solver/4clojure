@@ -5,8 +5,19 @@
 ;; Use M-x 4clojure-check-answers when you're done!
 
 
-(defn __ [lst]
+#_(defn __ [lst]
   (mapcat #(repeat 2 %) lst))
+
+
+(defmacro __ [lst]
+  `(quote ~(mapcat #(repeat 2 %) lst))
+  ;;`(mapcat #(repeat 2 %) ~lst)
+  )
+
+
+(defmacro foo []
+  `(1 2 3 4 5))
+
 
 (= (__ [1 2 3]) '(1 1 2 2 3 3))
 
