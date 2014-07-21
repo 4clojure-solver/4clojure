@@ -1,3 +1,4 @@
+(ns p032.jdj)
 ;; 4Clojure Question 32
 ;;
 ;; Write a function which duplicates each element of a sequence.
