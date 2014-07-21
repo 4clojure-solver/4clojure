@@ -18,6 +18,9 @@
       (recur (conj acc (first l1) (first l2)) (rest l1) (rest l2)))))
 
 
+(defmacro __ [l1 l2]
+  `(quote ~(mapcat vector l1 l2)))
+
 
 (= (__ [1 2 3] [:a :b :c]) '(1 :a 2 :b 3 :c))
 
