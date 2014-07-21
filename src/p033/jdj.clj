@@ -1,3 +1,4 @@
+(ns p033.jdj)
 ;; 4Clojure Question 33
 ;;
 ;; Write a function which replicates each element of a sequence a variable number of times.

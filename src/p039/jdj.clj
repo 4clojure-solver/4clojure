@@ -1,3 +1,4 @@
+(ns p039.jdj)
 ;; 4Clojure Question 39
 ;;
 ;; Write a function which takes two sequences and returns the first item from each, then the second item from each, then the third, etc.
